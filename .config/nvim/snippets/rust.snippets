@@ -1,0 +1,44 @@
+snippet me "map error"
+	.map_err(|e| { $0 })
+
+snippet mev "map error (vela-api)"
+	.map_err(|e| {
+		println!("{} $1", log_prefix, $2);
+		internal_server_error_t!()
+	})?$0
+
+snippet handlerv "axum handler (vela-api)"
+	use std::sync::Arc;
+	use axum::{
+		extract::State,
+		http::StatusCode,
+		Json,
+	};
+
+	use crate::{
+		models::{database::persona::Persona, response::ErrorResponse},
+		state::AppState,
+		internal_server_error_t,
+		unauthorized_t,
+	};
+	
+	pub async fn handler(
+		Extension(claims): Extension<JWTClaims>,
+		State(state): State<Arc<AppState>>,
+	) -> Result<Json<$2>, (StatusCode, Json<ErrorMessage>)> {
+		let log_prefix = "[routes::$1]";
+
+		let mut db = state.db.lock().await;
+		let persona = Persona::get_by_email(&mut db, &claims.email)
+			.await
+			.map_err(|e| {
+				println!("{} Failed to get persona: {:?}", log_prefix, e);
+				internal_server_error_t!()
+			})?
+			.ok_or(unauthorized_t!())?;
+
+		$0
+
+		Ok(Json())
+	}
+

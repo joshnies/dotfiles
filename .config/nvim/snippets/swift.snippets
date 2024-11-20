@@ -1,0 +1,18 @@
+snippet view "SwiftUI view"
+	import SwiftUI
+
+	struct $1: View {
+		var body: some View {
+			$0
+		}
+	}
+
+snippet vm "SwiftUI view model"
+	import SwiftUI
+
+	extension $1 {
+		@Observable class $2 {
+			$0
+		}
+	}
+
