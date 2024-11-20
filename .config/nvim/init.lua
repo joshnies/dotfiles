@@ -1,3 +1,9 @@
+--[[
+-- Based on: https://github.com/nvim-lua/kickstart.nvim
+-- Original author: Neovim maintainers
+-- License: MIT
+--]]
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -761,20 +767,6 @@ require('lazy').setup({
       }
     end,
   },
-
-  -- {
-  --   '0xstepit/flow.nvim',
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   init = function()
-  --     vim.cmd.colorscheme 'flow'
-  --     vim.cmd.hi 'Comment gui=none' -- Configure highlights
-  --   end,
-  --   config = function()
-  --     require('flow').setup {
-  --       transparent = true,
-  --     }
-  --   end,
-  -- },
 
   {
     'nyoom-engineering/oxocarbon.nvim',
