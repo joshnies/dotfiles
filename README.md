@@ -16,4 +16,13 @@ pacman -S stow          # arch
 
 stow .
 ```
+## Table of Contents
+
+| Filename/Directory | Description |
+| -------- | ----------- |
+| `d` | "\[D\]ev"; Bash script for creating or resuming the tmux session I use for development on Vela. Use this as a reference for your own environment. |
+| `.config/alacritty` | Alacritty config |
+| `.config/nvim` | Neovim config |
+| `.tmux.conf` | Tmux config |
+| `.zprofile`, `.zshrc` | ZSH config |
 
