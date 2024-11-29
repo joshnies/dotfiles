@@ -2,6 +2,12 @@
 
 My personal configuration files for macOS and Linux.
 
+## Requirements
+
+| Name | Description |
+| ---- | ----------- |
+| [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) |  |
+
 ## Install
 
 I recommend using GNU Stow for managing symlinks between this repository and
