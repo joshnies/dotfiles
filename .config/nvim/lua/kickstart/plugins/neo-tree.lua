@@ -38,7 +38,7 @@ return {
     },
     window = {
       mappings = {
-        ['w'] = 'open',
+        ['e'] = 'open',
       },
     },
   },
