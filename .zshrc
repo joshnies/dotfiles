@@ -19,3 +19,6 @@ f'
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# libsql
+export PATH="~/dev/libsql/libsql-sqlite3/libsql:$PATH"
+
