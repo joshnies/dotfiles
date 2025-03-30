@@ -21,7 +21,7 @@
   "base_keymap": "VSCode",
   "vim_mode": true,
   "relative_line_numbers": true,
-  "theme": "Xcode Default Dark",
+  "theme": "Xcode Default Darker",
   "experimental.theme_overrides": {
     "background.appearance": "blurred",
     // "background": "#292a2fe6",
@@ -52,7 +52,6 @@
     "modified": "#6299f7"
   },
   "ui_font_family": "Zed Mono",
-  "editor_font_family": "Zed Mono",
   "buffer_font_size": 14.0,
   "buffer_font_features": {
     // Disable ligatures:
