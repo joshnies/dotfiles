@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    }
+  },
   "show_edit_predictions": false,
   "features": {
     "edit_prediction_provider": "zed"
@@ -14,7 +19,7 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
