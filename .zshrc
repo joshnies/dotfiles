@@ -22,3 +22,19 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # libsql
 export PATH="~/dev/libsql/libsql-sqlite3/libsql:$PATH"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# custom
+#
+# Stage and commit all outstanding changes in git.
+gac() {
+    git add . && git commit -m "$1"
+}
+
+# State, commit and push all outstanding changes in git.
+gp() {
+    git add . && git commit -m "$1" && git push origin
+}
