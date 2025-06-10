@@ -1,6 +1,6 @@
 {
         "layer": "top",
-        "position": "top",
+        "position": "left",
         "reload_style_on_change": true,
         "modules-left": ["hyprland/workspaces"],
         "modules-center": [],
@@ -31,7 +31,8 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%I:%M %p} ",
+            "format": "{:%R} ",
+			"rotate": 90,
             "interval": 1,
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -55,16 +56,16 @@
         },
         "bluetooth": {
             "format-on": "󰂯",
-            "format-off": "BT-off",
+            "format-off": "󰂲",
             "format-disabled": "󰂲",
-            "format-connected-battery": "{device_battery_percentage}% 󰂯",
-            "format-alt": "{device_alias} 󰂯",
+            "format-connected-battery": "󰂯 {device_battery_percentage}%",
+            "format-alt": "󰂯",
             "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
             "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
             "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
             "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
             "on-click-right": "blueman-manager",
-        }, 
+        },
         "battery": {
             "interval": 30,
             "states": {
@@ -72,10 +73,10 @@
                 "warning": 25,
                 "critical": 10
             },
-            "format": "{icon} {capacity}%",
-            "format-charging": "󰂄 {capacity}%",
-            "format-plugged": "󰂄  {capacity}%",
-            "format-alt": "{time} {icon}",
+            "format": "{icon}",
+            "format-charging": "󰂄",
+            "format-plugged": "󰂄",
+            "format-alt": "{icon}",
             "format-icons": [
 				"󰁻",
 				"󰁼",
@@ -89,5 +90,5 @@
             "icon-size": 14,
             "spacing": 10
         },
-} 
+}
 
