@@ -1,0 +1,44 @@
+/**
+* Original Source:
+* https://github.com/mechakotik/dots/tree/main/.config/waybar
+*/
+
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #555555;
+@define-color background #000000;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding: 0 0.25em;
+}
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}
+
+#memory,
+#temperature {
+    padding-left: 1em
+}
+
+#wireplumber,
+#battery,
+#backlight,
+#network,
+#bluetooth,
+#tray,
+#clock {
+    padding-right: 1em 
+}

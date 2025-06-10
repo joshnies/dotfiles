@@ -132,6 +132,8 @@
 
   environment.systemPackages = with pkgs; [
     _1password-gui
+    blueman
+    bluez
     brightnessctl
     cargo
     chromium
@@ -145,10 +147,12 @@
     go
     hypridle
     hyprlock
+    hyprpicker
     hyprshot
     libnotify
     lua
     nerd-fonts.jetbrains-mono
+    networkmanager
     nodejs_24
     playerctl
     python313
