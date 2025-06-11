@@ -4,6 +4,7 @@ eval "$(fzf --zsh)"
 eval "$(pay-respects zsh)"
 eval "$(zoxide init zsh)"
 
+alias cd='z'
 alias j='just'
 alias nvimc='cd ~/dotfiles/nvim/.config/nvim && nvim -c "Neotree" init.lua'
 
