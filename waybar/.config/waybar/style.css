@@ -7,72 +7,73 @@ window#waybar{
     all: unset;
 }
 
-/** TRBL */
 .modules-left {
-    padding: 12px 8px 0 4px;
+    padding: 12px 0 0 4px;
 }
 .modules-center {
-    padding: 8px 4px;
 }
 .modules-right {
-    padding: 0 8px 16px 4px;
+    padding: 0 0 16px 4px;
 }
 
 tooltip {
-    /* background:@background; */
-    /* color: @color7; */
-}
-
-#clock:hover,
-#custom-notification:hover,
-#bluetooth:hover,
-#network:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover {
-    transition: all 150ms ease-out;
-    /* color:@color9; */
-}
-
-#custom-notification {
-    transition: all 150ms ease-out;
+    background: alpha(black, 0.9);
+    border: 1px solid alpha(white, 0.1);
+    color: alpha(white, 0.9);
 }
 
 #workspaces {
 }
-
 #workspaces button {
     all: unset;
     padding: 0px 6px;
     color: alpha(white, 0.35);
     transition: all 150ms ease-out;
 }
-
 #workspaces button:hover {
     border: none;
     color: alpha(white, 0.45);
     transition: all 150ms ease-out;
 }
-
 #workspaces button.active {
     border: none;
     color: alpha(white, 0.75);
 }
-
 #workspaces button.empty {
     border: none;
     color: alpha(black, 0.1);
 }
-
 #workspaces button.empty:hover {
     border: none;
     color: alpha(black, 0.2);
     transition: all 150ms ease-out;
 }
-
 #workspaces button.empty.active {
     border: none;
+    color: alpha(white, 0.75);
+}
+
+#cpu,
+#memory,
+#temperature,
+#bluetooth,
+#network,
+#battery,
+#custom-notification,
+#clock {
+    padding-top: 6px;
+    transition: all 150ms ease-out;
+}
+
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#custom-notification:hover,
+#clock:hover {
+    opacity: 0.8;
 }
 
 #bluetooth {
@@ -107,13 +108,7 @@ tooltip {
     animation-direction: alternate;
 }
 
-#tray {
-    transition: all 150ms ease-out;
-}
-#tray menu * {
-    transition: all 150ms ease-out;
-}
-#tray menu separator {
+#custom-notification {
     transition: all 150ms ease-out;
 }
 

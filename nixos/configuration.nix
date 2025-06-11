@@ -149,6 +149,7 @@
     hyprlock
     hyprpicker
     hyprshot
+    jq
     libnotify
     lua
     nerd-fonts.jetbrains-mono
