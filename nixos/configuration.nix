@@ -156,7 +156,6 @@
     just
     libnotify
     lua
-    nerd-fonts.jetbrains-mono
     networkmanager
     nodejs_24
     pay-respects
@@ -200,5 +199,10 @@
   };
 
   users.defaultUserShell = pkgs.zsh;
+
+  fonts.packages = with pkgs; [
+    inter
+    nerd-fonts.jetbrains-mono
+  ];
 
 }
