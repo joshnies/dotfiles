@@ -135,10 +135,12 @@
     blueman
     bluez
     brightnessctl
+    bun
     cargo
     chromium
     fd
     font-awesome
+    fzf
     gcc
     gh
     ghostty
@@ -151,11 +153,13 @@
     hyprshot
     imagemagick
     jq
+    just
     libnotify
     lua
     nerd-fonts.jetbrains-mono
     networkmanager
     nodejs_24
+    pay-respects
     playerctl
     python313
     pywal16
@@ -168,6 +172,7 @@
     waybar
     wget
     wofi
+    zoxide
     inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
@@ -187,5 +192,12 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+  };
+
+  users.defaultUserShell = pkgs.zsh;
 
 }
