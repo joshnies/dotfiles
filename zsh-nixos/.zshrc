@@ -1,4 +1,18 @@
-# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_save_no_dups
+setopt sharehistory
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+bindkey -e
+bindkey '^j' history-search-backward
+bindkey '^k' history-search-forward
 
 eval "$(fzf --zsh)"
 eval "$(pay-respects zsh)"
