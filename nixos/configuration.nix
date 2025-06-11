@@ -149,6 +149,7 @@
     hyprlock
     hyprpicker
     hyprshot
+    imagemagick
     jq
     libnotify
     lua
@@ -157,6 +158,7 @@
     nodejs_24
     playerctl
     python313
+    pywal16
     ripgrep
     rustc
     stow
