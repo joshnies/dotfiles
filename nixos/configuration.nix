@@ -170,6 +170,7 @@
     vim
     waybar
     wget
+    wl-clipboard
     wofi
     zoxide
     inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
