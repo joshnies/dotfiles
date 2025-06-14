@@ -239,6 +239,7 @@
         clipboard = {
           enable = true;
           providers.wl-copy.enable = true;
+          registers = "unnamedplus";
         };
         diagnostics.enable = true;
         filetree.neo-tree = {
@@ -286,6 +287,10 @@
           desc = "Toggle neo-tree";
           action = "<cmd>Neotree toggle reveal<cr>";
         };
+
+        luaConfigRC.config = ''
+
+        '';
       };
     };
   };
