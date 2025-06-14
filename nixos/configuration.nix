@@ -132,6 +132,7 @@
 
   environment.systemPackages = with pkgs; [
     _1password-gui
+    bazecor
     blueman
     bluez
     brightnessctl
