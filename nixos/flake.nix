@@ -4,8 +4,9 @@
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     mcmojave-hyprcursor.url = "github:libadoxon/mcmojave-hyprcursor";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { nixpkgs, ... } @ inputs: {
@@ -13,6 +14,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        inputs.nvf.nixosModules.default
       ];
     };
   };

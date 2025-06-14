@@ -2,19 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
   # This value determines the NixOS release from which the default
@@ -124,8 +132,11 @@
   users.users.josh = {
     isNormalUser = true;
     description = "Joshua Nies";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -164,7 +175,9 @@
     python313
     pywal16
     ripgrep
+    rust-analyzer
     rustc
+    rustfmt
     stow
     swaynotificationcenter
     unzip
@@ -183,15 +196,91 @@
     # set the flake package
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
   };
 
-  programs.neovim = {
+  programs.nvf = {
     enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
+    settings = {
+      vim = {
+        theme.enable = true;
+        theme.name = "oxocarbon";
+        theme.style = "dark";
+
+        options = {
+          shiftwidth = 4;
+          tabstop = 4;
+        };
+
+        languages = {
+          enableTreesitter = true;
+
+          astro.enable = true;
+          bash.enable = true;
+          html.enable = true;
+          lua.enable = true;
+          markdown = {
+            enable = true;
+            extensions.render-markdown-nvim.enable = true;
+          };
+          nix.enable = true;
+          go.enable = true;
+          rust.enable = true;
+          ts.enable = true;
+        };
+
+        autocomplete.nvim-cmp.enable = true;
+        clipboard = {
+          enable = true;
+          providers.wl-copy.enable = true;
+        };
+        diagnostics.enable = true;
+        filetree.neo-tree = {
+          enable = true;
+          setupOpts = {
+            close_if_last_window = true;
+            filesystem = {
+              # window = {
+              #   mappings = {
+              #     "\\" = "close_window";
+              #   };
+              # };
+            };
+            window = {
+              mappings = {
+                e = "open";
+              };
+            };
+          };
+        };
+        lsp = {
+          enable = true;
+          formatOnSave = true;
+        };
+        navigation.harpoon = {
+          enable = true;
+          mappings = {
+            file1 = "<M-1>";
+            file2 = "<M-2>";
+            file3 = "<M-3>";
+            file4 = "<M-4>";
+            listMarks = "<M-0>";
+          };
+        };
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        treesitter.indent.disable = [ "nix" ];
+
+        binds.whichKey.enable = true;
+
+        maps.normal."\\" = {
+          desc = "Toggle neo-tree";
+          action = "<cmd>Neotree toggle reveal<cr>";
+        };
+      };
+    };
   };
 
   programs.zsh = {
