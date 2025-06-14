@@ -33,10 +33,11 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05";
 
-  # hardware = {
-  #   # Enabled for hyprland
-  #   graphics.enable = true;
-  # };
+  hardware = {
+    # Enabled for hyprland
+    # graphics.enable = true;
+    keyboard.qmk.enable = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
