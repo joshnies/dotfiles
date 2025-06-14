@@ -48,6 +48,10 @@
     "amdgpu.abmlevel=0" # fix color accuracy for Framework Laptop 16 (AMD 7040 Series)
   ];
 
+  security.sudo.extraConfig = ''
+    Defaults timestamp_timeout=15
+  '';
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -242,11 +246,14 @@
           setupOpts = {
             close_if_last_window = true;
             filesystem = {
-              # window = {
-              #   mappings = {
-              #     "\\" = "close_window";
-              #   };
-              # };
+              filtered_items = {
+                visible = true;
+                never_show = [
+                  ".DS_Store"
+                  ".git"
+                  "thumbs.db"
+                ];
+              };
             };
             window = {
               mappings = {
