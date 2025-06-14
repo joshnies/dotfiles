@@ -269,10 +269,10 @@
         navigation.harpoon = {
           enable = true;
           mappings = {
-            file1 = "<M-1>";
-            file2 = "<M-2>";
-            file3 = "<M-3>";
-            file4 = "<M-4>";
+            file1 = "<C-1>";
+            file2 = "<C-2>";
+            file3 = "<C-3>";
+            file4 = "<C-4>";
             listMarks = "<M-0>";
           };
         };
