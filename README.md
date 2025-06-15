@@ -25,3 +25,8 @@ stow hypr
 > Do NOT stow the root directory, which would result in an incorrect file
 > structure.
 
+To unlink a module, just use `unlink`:
+
+```sh
+unlink nixos
+```
