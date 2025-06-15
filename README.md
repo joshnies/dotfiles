@@ -1,34 +1,24 @@
-# Josh Nies' dotfiles
+# Dotfiles
 
-My personal configuration files for macOS and Linux.
+My personal configuration files for Linux (NixOS) and macOS.
 
-## Requirements
+## Usage
 
-| Name | Description |
-| ---- | ----------- |
-| [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) |  |
+> Work in Progress
 
-## Install
+<details>
+    <summary>NixOS (25.05)</summary>
 
-I recommend using GNU Stow for managing symlinks between this repository and
-your home directory:
+    ```sh
+    stow nixos # using GNU Stow
+    ```
+</details>
 
-```sh
-cd dotfiles             # if you haven't already
+<details>
+    <summary>Hyprland Ecosystem</summary>
 
-brew install stow       # macOS
-sudo apt install stow   # debian
-pacman -S stow          # arch
-
-stow .
-```
-## Table of Contents
-
-| Filename/Directory | Description |
-| -------- | ----------- |
-| `d` | "\[D\]ev"; Bash script for creating or resuming the tmux session I use for development on Vela. Use this as a reference for your own environment. |
-| `.config/alacritty` | Alacritty config |
-| `.config/nvim` | Neovim config |
-| `.tmux.conf` | Tmux config |
-| `.zprofile`, `.zshrc` | ZSH config |
+    ```sh
+    stow hypr # using GNU Stow
+    ```
+</details>
 
