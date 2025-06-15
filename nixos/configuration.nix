@@ -5,6 +5,7 @@
 {
   config,
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -148,6 +149,7 @@
 
   environment.systemPackages = with pkgs; [
     _1password-gui
+    aichat
     bazecor
     blueman
     bluez
@@ -213,6 +215,34 @@
         theme.enable = true;
         theme.name = "oxocarbon";
         theme.style = "dark";
+        theme.transparent = true;
+        theme.extraConfig = # lua
+          ''
+            -- Transparent background
+            -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+            -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+            -- vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+            -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+            -- vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#333333', bg = 'none' })
+
+            -- Other
+            -- vim.api.nvim_set_hl(0, 'Comment', { fg = '#7c7c7c' })
+            -- vim.api.nvim_set_hl(0, 'LineNr', { fg = '#7c7c7c', bg = 'none' })
+
+            -- neo-tree
+            vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = '#BF95FF' })
+            vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = '#BF95FF' })
+            vim.api.nvim_set_hl(0, 'NeoTreeFadeText1', { fg = '#7c7c7c' })
+            vim.api.nvim_set_hl(0, 'NeoTreeFadeText2', { fg = '#7c7c7c' })
+            vim.api.nvim_set_hl(0, 'NeoTreeFileIcon', { fg = '#B3B3B3' })
+            vim.api.nvim_set_hl(0, 'NeoTreeGitDeleted', { fg = '#EE5396' })
+            vim.api.nvim_set_hl(0, 'NeoTreeGitModified', { fg = '#FF7EB6' })
+            vim.api.nvim_set_hl(0, 'NeoTreeGitUnstaged', { fg = '#FF7EB6' })
+            vim.api.nvim_set_hl(0, 'NeoTreeGitUntracked', { fg = '#FF7EB6' })
+            vim.api.nvim_set_hl(0, 'NeoTreeSymbolicLinkTarget', { fg = '#FF7EB6' })
+
+            -- vim.cmd.hi 'Comment gui=none' -- Configure highlights
+          '';
 
         options = {
           shiftwidth = 4;
@@ -228,7 +258,12 @@
           lua.enable = true;
           markdown = {
             enable = true;
-            extensions.render-markdown-nvim.enable = true;
+            extensions.render-markdown-nvim = {
+              enable = true;
+              setupOpts = {
+                heading.enabled = false;
+              };
+            };
           };
           nix.enable = true;
           go.enable = true;
@@ -237,6 +272,7 @@
         };
 
         autocomplete.nvim-cmp.enable = true;
+        autopairs.nvim-autopairs.enable = true;
         clipboard = {
           enable = true;
           providers.wl-copy.enable = true;
@@ -288,10 +324,6 @@
           desc = "Toggle neo-tree";
           action = "<cmd>Neotree toggle reveal<cr>";
         };
-
-        luaConfigRC.config = ''
-
-        '';
       };
     };
   };
@@ -305,6 +337,8 @@
   users.defaultUserShell = pkgs.zsh;
 
   fonts.packages = with pkgs; [
+    fragment-mono
+    helvetica-neue-lt-std
     inter
     nerd-fonts.jetbrains-mono
   ];
