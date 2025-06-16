@@ -164,6 +164,7 @@
     git
     gnumake
     go
+    hoppscotch
     hypridle
     hyprlock
     hyprpicker
