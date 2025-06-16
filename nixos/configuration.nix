@@ -312,13 +312,15 @@
             vim.cmd.hi 'Comment gui=none'
             vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = '#BF95FF' })
             vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = '#BF95FF' })
-            vim.api.nvim_set_hl(0, 'NeoTreeFadeText1', { fg = '#7c7c7c' })
-            vim.api.nvim_set_hl(0, 'NeoTreeFadeText2', { fg = '#7c7c7c' })
+            vim.api.nvim_set_hl(0, 'NeoTreeDotfile', { fg = '#9d9d9d' })
+            vim.api.nvim_set_hl(0, 'NeoTreeFadeText1', { fg = '#9d9d9d' })
+            vim.api.nvim_set_hl(0, 'NeoTreeFadeText2', { fg = '#9d9d9d' })
             vim.api.nvim_set_hl(0, 'NeoTreeFileIcon', { fg = '#B3B3B3' })
             vim.api.nvim_set_hl(0, 'NeoTreeGitDeleted', { fg = '#EE5396' })
             vim.api.nvim_set_hl(0, 'NeoTreeGitModified', { fg = '#FF7EB6' })
             vim.api.nvim_set_hl(0, 'NeoTreeGitUnstaged', { fg = '#FF7EB6' })
             vim.api.nvim_set_hl(0, 'NeoTreeGitUntracked', { fg = '#FF7EB6' })
+            vim.api.nvim_set_hl(0, 'NeoTreeHiddenByName', { fg = '#9d9d9d' })
             vim.api.nvim_set_hl(0, 'NeoTreeSymbolicLinkTarget', { fg = '#FF7EB6' })
           '';
       };
@@ -334,8 +336,6 @@
   users.defaultUserShell = pkgs.zsh;
 
   fonts.packages = with pkgs; [
-    fragment-mono
-    helvetica-neue-lt-std
     inter
     nerd-fonts.jetbrains-mono
   ];

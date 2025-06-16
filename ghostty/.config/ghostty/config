@@ -1,4 +1,4 @@
-background-opacity = 0.5
+background-opacity = 0.6
 # command = zsh -c "wal -Rq; exec zsh"
 command = zsh
 font-family = JetBrainsMono Nerd Font
