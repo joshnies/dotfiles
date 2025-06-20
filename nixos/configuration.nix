@@ -192,6 +192,7 @@
     wget
     wl-clipboard
     wofi
+    zed-editor
     zoxide
     inputs.mcmojave-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.default
