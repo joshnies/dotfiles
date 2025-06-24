@@ -260,9 +260,9 @@
             "font_weight": null
           },
           "function.definition": {
-            "color": "#FFFFFF",
+            "color": "#AF9CFF",
             "font_style": null,
-            "font_weight": 600
+            "font_weight": null
           },
           "function.special": {
             "color": "#A8CC7C",

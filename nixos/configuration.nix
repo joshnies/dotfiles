@@ -138,9 +138,9 @@
     description = "Joshua Nies";
     extraGroups = [
       "networkmanager"
+      "podman" # run podman without sudo
       "wheel"
     ];
-    packages = with pkgs; [ ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -152,9 +152,9 @@
     blueman
     bluez
     brightnessctl
-    bun
     cargo
     chromium
+    doppler
     fd
     font-awesome
     fzf
@@ -163,7 +163,6 @@
     ghostty
     git
     gnumake
-    go
     hoppscotch
     hypridle
     hyprlock
@@ -171,19 +170,17 @@
     hyprshot
     imagemagick
     jq
-    just
     libnotify
     lua
     networkmanager
+    nil
+    nixd
     nodejs_24
     pay-respects
     playerctl
     python313
     pywal16
     ripgrep
-    rust-analyzer
-    rustc
-    rustfmt
     stow
     swaynotificationcenter
     unzip
@@ -216,8 +213,6 @@
         theme.name = "oxocarbon";
         theme.style = "dark";
         theme.transparent = true;
-        theme.extraConfig = # lua
-          '''';
 
         options = {
           shiftwidth = 4;
@@ -332,6 +327,9 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      docker = "podman";
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -340,5 +338,10 @@
     inter
     nerd-fonts.jetbrains-mono
   ];
+
+  virtualisation.podman = {
+    enable = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
 }
