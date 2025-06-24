@@ -170,6 +170,7 @@
     hyprpicker
     hyprshot
     imagemagick
+    jetbrains.datagrip
     jq
     libnotify
     lua
