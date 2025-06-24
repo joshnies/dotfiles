@@ -137,8 +137,8 @@
     isNormalUser = true;
     description = "Joshua Nies";
     extraGroups = [
+      "docker" # run docker without sudo
       "networkmanager"
-      "podman" # run podman without sudo
       "wheel"
     ];
   };
@@ -154,6 +154,7 @@
     brightnessctl
     cargo
     chromium
+    docker-compose
     doppler
     fd
     font-awesome
@@ -327,9 +328,9 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    shellAliases = {
-      docker = "podman";
-    };
+    # shellAliases = {
+    #   docker = "podman";
+    # };
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -339,9 +340,10 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  virtualisation.podman = {
+  virtualisation.containers.enable = true;
+  virtualisation.docker = {
     enable = true;
-    defaultNetwork.settings.dns_enabled = true;
+    # defaultNetwork.settings.dns_enabled = true;
   };
 
 }
