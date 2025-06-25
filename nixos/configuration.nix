@@ -172,17 +172,24 @@
     imagemagick
     jetbrains.datagrip
     jq
+    just
     libnotify
     lua
     networkmanager
     nil
     nixd
     nodejs_24
+    openssl
     pay-respects
+    pkg-config
     playerctl
+    postgresql
     python313
     pywal16
     ripgrep
+    rust-analyzer
+    rustc
+    rustfmt
     stow
     swaynotificationcenter
     unzip
