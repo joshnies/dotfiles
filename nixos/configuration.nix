@@ -224,6 +224,7 @@
         theme.transparent = true;
 
         options = {
+          shada = "'1000,f1,<500";
           shiftwidth = 4;
           tabstop = 4;
         };
@@ -323,12 +324,36 @@
         telescope.enable = true;
         treesitter.indent.disable = [ "nix" ];
         ui.noice.enable = true;
+        utility = {
+          sleuth.enable = true;
+          yanky-nvim = {
+            enable = true;
+          };
+        };
 
         binds.whichKey.enable = true;
 
-        maps.normal."\\" = {
-          desc = "Toggle neo-tree";
-          action = "<cmd>Neotree toggle reveal<cr>";
+        maps.normal = {
+          "\\" = {
+            desc = "Toggle neo-tree";
+            action = "<cmd>Neotree toggle reveal<cr>";
+          };
+          p = {
+            desc = "Yanky Put After";
+            action = "<Plug>(YankyPutAfter)";
+          };
+          P = {
+            desc = "Yanky Put Before";
+            action = "<Plug>(YankyPutBefore)";
+          };
+          "<C-k>" = {
+            desc = "Yanky Previous Entry";
+            action = "<Plug>(YankyPreviousEntry)";
+          };
+          "<C-j>" = {
+            desc = "Yanky Next Entry";
+            action = "<Plug>(YankyNextEntry)";
+          };
         };
 
         luaConfigRC.config = # lua
