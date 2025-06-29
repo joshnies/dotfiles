@@ -230,7 +230,6 @@
 
         languages = {
           enableTreesitter = true;
-
           astro.enable = true;
           bash.enable = true;
           html.enable = true;
@@ -250,7 +249,14 @@
           ts.enable = true;
         };
 
-        autocomplete.nvim-cmp.enable = true;
+        autocomplete.blink-cmp = {
+          enable = true;
+          mappings = {
+            close = "<C-c>";
+            scrollDocsDown = "<C-j>";
+            scrollDocsUp = "<C-k>";
+          };
+        };
         autopairs.nvim-autopairs.enable = true;
         clipboard = {
           enable = true;
@@ -282,6 +288,25 @@
         lsp = {
           enable = true;
           formatOnSave = true;
+          trouble = {
+            enable = true;
+            mappings = {
+              documentDiagnostics = "<leader>e";
+              # quickfix = "<leader>.";
+            };
+          };
+          mappings = {
+            codeAction = "<leader>.";
+            format = "<leader>cf";
+            goToDeclaration = "gD";
+            goToDefinition = "gd";
+            goToType = "gt";
+            hover = "<leader>h";
+            nextDiagnostic = "<leader>ne";
+            openDiagnosticFloat = "<leader>ef";
+            previousDiagnostic = "<leader>Ne";
+            renameSymbol = "<leader>r";
+          };
         };
         navigation.harpoon = {
           enable = true;
@@ -293,9 +318,11 @@
             listMarks = "<M-0>";
           };
         };
+        notes.todo-comments.enable = true;
         statusline.lualine.enable = true;
         telescope.enable = true;
         treesitter.indent.disable = [ "nix" ];
+        ui.noice.enable = true;
 
         binds.whichKey.enable = true;
 
