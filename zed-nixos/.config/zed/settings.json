@@ -3,7 +3,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-latest"
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
@@ -45,9 +45,6 @@
         }
       }
     },
-    "Dart": {
-      "tab_size": 2
-    },
     "HTML": {
       "tab_size": 2,
       "formatter": {
@@ -87,9 +84,6 @@
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
-    },
-    "Rust": {
-      "preferred_line_length": 100
     }
   },
   "theme": "Nuance"
