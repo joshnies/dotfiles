@@ -1,0 +1,12 @@
+background-opacity = 0.6
+# command = zsh -c "wal -Rq; exec zsh"
+command = zsh
+cursor-style = underline
+cursor-style-blink = false
+font-family = JetBrainsMono Nerd Font
+font-size = 11
+shell-integration-features = no-cursor
+theme = Oxocarbon
+window-decoration = none
+window-padding-x = 8
+window-padding-y = 8
