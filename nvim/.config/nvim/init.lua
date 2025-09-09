@@ -13,6 +13,19 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.clipboard = {
+  name = 'wl-clipboard',
+  copy = {
+    ['+'] = { 'wl-copy', '--foreground', '--type', 'text/plain' },
+    ['*'] = { 'wl-copy', '--foreground', '--type', 'text/plain' },
+  },
+  paste = {
+    ['+'] = { 'wl-paste', '--no-newline' },
+    ['*'] = { 'wl-paste', '--no-newline' },
+  },
+  cache_enabled = 1,
+}
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
@@ -38,9 +51,9 @@ vim.opt.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+-- vim.schedule(function()
+--   vim.opt.clipboard = 'unnamedplus'
+-- end)
 
 -- Enable break indent
 vim.opt.breakindent = true
