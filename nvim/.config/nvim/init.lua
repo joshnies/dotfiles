@@ -112,7 +112,7 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
+-- Keymaps to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
@@ -124,20 +124,51 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Page down + center cursor' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Page up + center cursor' })
 
-local open_terminal = function()
+-- Toggle terminal.
+--
+-- Returns true if a new terminal window was opened, or false if the existing
+-- window was closed.
+local toggle_terminal = function()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buftype == 'terminal' then
+      local wins = vim.fn.win_findbuf(buf)
+      if #wins > 0 then
+        vim.api.nvim_win_close(wins[1], true)
+        return false
+      end
+    end
+  end
+
+  -- Open new terminal
   vim.cmd.vnew()
   vim.cmd.term()
   vim.cmd.wincmd 'J' -- open at the bottom of the screen
   vim.api.nvim_win_set_height(0, 15)
+  return true
 end
 
 vim.keymap.set('n', '<leader><leader>', function()
-  open_terminal()
-end)
+  toggle_terminal()
+end, { desc = 'Toggle terminal' })
 
 vim.keymap.set('n', '<leader>a<leader>', function()
-  open_terminal()
+  if toggle_terminal() then
+    vim.api.nvim_feedkeys('A', 'n', false) -- enter insert mode at end of line (shift + A)
+  end
+end, { desc = 'Toggle terminal + enter insert mode' })
+
+-- [[ Odin Keymaps ]]
+vim.keymap.set('n', '<leader>or', function()
+  if toggle_terminal() then
+    vim.api.nvim_feedkeys('A', 'n', false) -- enter insert mode at end of line (shift + A)
+    vim.api.nvim_feedkeys('odin run . -debug\n', 'n', false)
+  end
+end)
+
+vim.keymap.set('n', '<leader>ob', function()
+  toggle_terminal()
   vim.api.nvim_feedkeys('A', 'n', false) -- enter insert mode at end of line (shift + A)
+  vim.api.nvim_feedkeys('odin build . -debug\n', 'n', false)
 end)
 
 -- [[ Basic Autocommands ]]
