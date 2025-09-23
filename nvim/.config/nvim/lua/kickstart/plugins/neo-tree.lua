@@ -15,8 +15,11 @@ return {
   },
   init = function()
     -- Replace netrw with neo-tree
-    if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
-      require 'neo-tree'
+    if vim.fn.argc() == 1 then
+      local arg0 = tostring(vim.fn.argv(0))
+      if vim.fn.isdirectory(arg0) == 1 then
+        require 'neo-tree'
+      end
     end
   end,
   opts = {
