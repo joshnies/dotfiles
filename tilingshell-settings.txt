@@ -1,0 +1,8 @@
+[/]
+enable-autotiling=true
+move-window-down=['<Super>j']
+move-window-left=['<Super>h']
+move-window-right=['<Super>l']
+move-window-up=['<Super>k']
+selected-layouts=[['Layout 1'], ['Layout 1'], ['Layout 1'], ['Layout 1']]
+snap-assistant-animation-time=uint32 100

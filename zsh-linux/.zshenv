@@ -1,4 +1,4 @@
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 # Stage and commit all outstanding changes in git.
 gac() {
