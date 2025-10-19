@@ -6,7 +6,13 @@ gac() {
 }
 
 # State, commit and push all outstanding changes in git.
-gp() {
+gpush() {
     git add . && git commit -m "$1" && git push origin
 }
 
+# State, commit and push all outstanding changes in git.
+gpull() {
+    git fetch && git pull
+}
+
+alias gp=gpush
