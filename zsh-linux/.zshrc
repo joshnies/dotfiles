@@ -5,9 +5,12 @@ export LD_LIBRARY_PATH=$VULKAN_SDK/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 export VK_LAYER_PATH=$VULKAN_SDK/share/vulkan/explicit_layer.d
 export VK_ADD_LAYER_PATH=$VULKAN_SDK/share/vulkan/explicit_layer.d
 
-# odin
-path+=/home/josh/dev/odin
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+path+=/home/josh/dev/basis_universal/bin
+path+=/home/josh/dev/odin
 export PATH
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
