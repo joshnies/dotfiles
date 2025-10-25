@@ -1,0 +1,25 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-h": "workspace::ToggleLeftDock",
+      "alt-l": "workspace::ToggleRightDock",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-o": "outline_panel::ToggleFocus",
+      "alt-q": "terminal_panel::Toggle"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w": "pane::CloseActiveItem"
+    }
+  }
+]

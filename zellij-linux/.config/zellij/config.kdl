@@ -263,7 +263,6 @@ themes {
 theme "oxocarbon"
 default_layout "compact"
 copy_command "wl-copy"
-on_force_close "quit"
 show_startup_tips false
 
 web_client {

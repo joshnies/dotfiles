@@ -1,0 +1,41 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_features": {
+    "calt": 0
+  },
+  "buffer_font_family": "Google Sans Code",
+  "ui_font_family": "Google Sans Code",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "format_on_save": "on",
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Oxocarbon Dark (IBM Carbon)"
+  },
+  "theme_overrides": {
+    "Oxocarbon Dark (IBM Carbon)": {
+      "editor.document_highlight.bracket_background": "#00000000",
+      "players": [
+        {
+          "background": "#5f5f5fff",
+          "cursor": "#5f5f5fff",
+          "selection": "#323232ff"
+        }
+      ],
+      "syntax": {
+        "string": {
+          "color": "#d9c6ecff"
+        }
+      }
+    }
+  }
+}
