@@ -1,0 +1,26 @@
+layout {
+    pane split_direction="vertical" {
+        pane {
+            name "basis_universal"
+            cwd "~/dev/basis_universal"
+            command "nvim"
+            args "."
+            focus true
+        }
+        pane stacked=true {
+            pane {
+                name "basis_universal"
+                cwd "~/dev/basis_universal"
+                command "nvim"
+                args "."
+                expanded true
+            }
+            pane {
+                name "sicilia/ktx"
+                cwd "~/dev/sicilia/ktx"
+                command "nvim"
+                args "."
+            }
+        }
+    }
+}
