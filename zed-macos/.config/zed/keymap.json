@@ -9,6 +9,8 @@
   {
     "context": "Workspace",
     "bindings": {
+      "cmd-b": null,
+      "cmd-j": null,
       "ctrl-e": "project_panel::ToggleFocus",
       "ctrl-h": "workspace::ToggleLeftDock",
       "ctrl-j": "terminal_panel::Toggle",
