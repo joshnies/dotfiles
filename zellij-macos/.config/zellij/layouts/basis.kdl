@@ -1,0 +1,35 @@
+layout {
+    pane split_direction="vertical" {
+        pane stacked=true {
+            pane {
+                name "basis_universal"
+                cwd "~/dev/basis_universal"
+                command "nvim"
+                args "."
+                focus true
+            }
+            pane {
+                name "basis_universal (zsh)"
+                cwd "~/dev/basis_universal"
+            }
+        }
+        pane stacked=true {
+            pane {
+                name "basis_universal"
+                cwd "~/dev/basis_universal"
+                command "nvim"
+                args "."
+                expanded true
+            }
+            pane {
+                name "sicilia/ktx"
+                cwd "~/dev/sicilia/ktx"
+                command "nvim"
+                args "."
+            }
+        }
+    }
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+}
