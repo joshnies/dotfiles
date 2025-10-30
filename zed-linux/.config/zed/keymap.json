@@ -10,10 +10,11 @@
     "context": "Workspace",
     "bindings": {
       "alt-h": "workspace::ToggleLeftDock",
+      "alt-j": "terminal_panel::Toggle",
       "alt-l": "workspace::ToggleRightDock",
       "alt-e": "project_panel::ToggleFocus",
       "alt-o": "outline_panel::ToggleFocus",
-      "alt-q": "terminal_panel::Toggle"
+      "alt-w": "pane::CloseActiveItem"
     }
   },
   {

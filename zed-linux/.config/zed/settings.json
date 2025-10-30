@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-5-thinking"
+    },
+    "model_parameters": []
+  },
   "buffer_font_family": "Google Sans Code",
   "buffer_font_features": {
     "calt": 0
@@ -45,5 +52,8 @@
         }
       }
     }
+  },
+  "terminal": {
+    "shell": "system"
   }
 }

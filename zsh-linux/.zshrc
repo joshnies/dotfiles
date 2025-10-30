@@ -15,3 +15,15 @@ export PATH
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+gpush() {
+	git add .
+	git commit -m "$1"
+	git push
+}
+
+gpull() {
+	git fetch && git pull
+}
+
+alias gp='gpush'
+
