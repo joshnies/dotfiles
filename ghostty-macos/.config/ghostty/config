@@ -5,6 +5,6 @@ cursor-style-blink = false
 font-family = Google Sans Code
 font-size = 13
 shell-integration-features = no-cursor
-theme = Oxocarbon
+theme = oxocarbon.conf
 window-padding-x = 8
 window-padding-y = 8
