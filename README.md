@@ -28,5 +28,5 @@ stow hypr
 To unlink a module, just use `unlink`:
 
 ```sh
-unlink nixos
+unlink zsh-linux
 ```
