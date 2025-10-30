@@ -23,11 +23,6 @@
   "preview_tabs": {
     "enabled": false
   },
-  "terminal": {
-    "shell": {
-      "program": "zsh"
-    }
-  },
   "ui_font_family": "Google Sans Code",
   "ui_font_size": 16,
   "vim_mode": true,
