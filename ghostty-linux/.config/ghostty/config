@@ -1,4 +1,3 @@
-command = zsh
 cursor-style = underline
 cursor-style-blink = false
 font-family = Google Sans Code

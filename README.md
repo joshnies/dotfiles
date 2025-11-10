@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal configuration files for Linux (NixOS) and macOS.
+My personal configuration files for Linux (Bazzite) and macOS.
 
 ## Usage
 
@@ -17,8 +17,7 @@ configuration module.
 stow <path>
 
 # For example:
-stow nixos
-stow hypr
+stow nvim-linux
 ```
 
 > [!WARNING]
@@ -28,5 +27,5 @@ stow hypr
 To unlink a module, just use `unlink`:
 
 ```sh
-unlink zsh-linux
+unlink nvim-linux
 ```
