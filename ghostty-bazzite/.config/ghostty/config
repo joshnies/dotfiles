@@ -3,6 +3,12 @@ cursor-style-blink = false
 font-family = Google Sans Code
 font-size = 11
 shell-integration-features = no-cursor
-theme = oxocarbon.conf
+# theme = oxocarbon.conf
+theme = poimandres
 window-padding-x = 8
 window-padding-y = 8
+
+# unbind conflicting keybinds for helix
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+

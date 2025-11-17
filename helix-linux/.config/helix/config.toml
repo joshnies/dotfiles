@@ -1,0 +1,21 @@
+# theme = "sonokai"
+theme = "base16_terminal"
+
+[editor]
+auto-format = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "file-name",
+  "read-only-indicator",
+  "separator",
+  "spacer",
+  "version-control"
+]
+right = ["diagnostics", "register", "file-encoding", "position"]
