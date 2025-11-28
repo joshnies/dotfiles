@@ -23,4 +23,5 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # applications
 path+=~/Applications/zen
+path+=~/src/ashell/target/release
 
