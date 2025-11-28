@@ -21,3 +21,6 @@ export NVM_DIR="$HOME/.nvm"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# applications
+path+=~/Applications/zen
+
