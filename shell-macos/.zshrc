@@ -35,5 +35,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# rpm (local dev)
+path+=~/dev/odin
 path+=~/dev/rpm/rpm/target/release
