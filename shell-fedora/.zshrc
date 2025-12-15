@@ -25,3 +25,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 path+=~/Applications/zen
 path+=~/src/ashell/target/release
 
+
+# bun completions
+[ -s "/home/jnies/.bun/_bun" ] && source "/home/jnies/.bun/_bun"
