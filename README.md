@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal configuration files for Linux (Bazzite) and macOS.
+My personal configuration files for Fedora and macOS.
 
 ## Usage
 
