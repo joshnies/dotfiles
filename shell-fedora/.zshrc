@@ -28,3 +28,8 @@ path+=~/src/ashell/target/release
 
 # bun completions
 [ -s "/home/jnies/.bun/_bun" ] && source "/home/jnies/.bun/_bun"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Turso
+export PATH="$PATH:/home/jnies/.turso"
